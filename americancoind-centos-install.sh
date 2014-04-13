@@ -46,9 +46,11 @@ cp -a americancoind /usr/local/bin/
 #echo " If you do not have a standard non-root user, then you can create one using the useradd command. In this example we.re going to create a user named american. "
 useradd -m -s/bin/bash amccoin
 
+mkdir /home/amccoin/.americancoin
+chown amccoin:amccoin /home/amccoin/.americancoin
 cd /home/amccoin/.americancoin
 pass=$(tr -dc A-Za-z0-9 </dev/urandom |  head -c 30)
-echo "rpcuser=americancoinrpc\n
+echo "rpcuser=americancoinrpc
 rpcpassword=$pass" >> americancoin.conf
 chown amccoin:amccoin americancoin.conf
 
